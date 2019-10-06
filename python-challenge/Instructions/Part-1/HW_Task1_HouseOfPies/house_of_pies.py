@@ -1,4 +1,3 @@
-
 form = ("Welcome to the House of Pies! Here are our pies: --------------------------------------- (1) Pecan, (2) Apple Crisp, (3) Bean, (4) Banoffee,  (5) Black Bun, (6) Blueberry, (7) Buko, (8) Burek,  (9) Tamale, (10) Steak")
     
 print(form)
@@ -20,7 +19,8 @@ for x in pie_list:
     Tamale = "x" + "8"
     Steak = "x" + "10"
 
-while # _ in range(pie_list):
+while shopping == "y":
+    print
     order = input("Which flavor would you like to order? Select the number representing your preferred flavor.\n")
     print(order)
     #purchases.append()
