@@ -1,0 +1,26 @@
+--SELECT title, film_id
+--from film;
+
+SELECT i.inventory_id, 
+	i.film_id, 
+	i.store_id,
+	film.title,
+	film.film_id
+FROM inventory i
+JOIN film
+ON (i.film_id = film.film_id);
+
+select count (film_id) 
+as 'Film ID Count'
+from film;
+
+CREATE VIEW title_count AS
+SELECT *
+from inventory
+WHERE film_id in
+(
+	select film_id
+	from film
+	where film_id count = 7
+); 
+	

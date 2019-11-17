@@ -1,0 +1,3 @@
+--PART 1: PostgreSQL Joins include INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN, NATURAL JOIN, SELF JOIN AND FULL OUTER JOIN.
+--Each of the join examples is most easily understood as a graphic depiction where the first table highlighted is typically referenced as the table on the left and the second is the one on the right. Each of the join types make reference to the side of the columns of the designated side mentioned as part of the join.
+--PART 2: The example uses an INNER JOIN.
