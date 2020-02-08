@@ -1,0 +1,1 @@
+##When deploying to heroku or another db, I would list all the library dependencies in this file to make it work.
