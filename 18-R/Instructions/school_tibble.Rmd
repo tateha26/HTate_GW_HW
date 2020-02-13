@@ -157,25 +157,36 @@ sapply(overall_passing_rate, class)
 #        Percent.Passing.Math = percentage_passing_math,
 #        Overall.Passing.Rate = overall_passing_rate
 # )
-
-tibble_as(data2)
-type <- group_by(data2, type, school_name, mean_reading_score, mean_math_score, student_count)
+# 
+# tibble_as(data2)
+# type <- group_by(data2, type, school_name, mean_reading_score, mean_math_score, student_count)
 
 ```
 ### Display summary of district-wide data
 ```{r}
-summarize(data2, sum(school_count))
-summarize(data2, sum(student_count))
-summarize(data2, sum(total_budget))
-summarize(data2, mean(mean_reading_score))
-summarize(data2, mean(mean_math_score))
-summarize(data2, mean(percentage_passing_reading))
-summarize(data2, mean(percentage_passing_math))
-summarize(data2, mean(overall_passing_rate))
+data2 %>% 
+  group_by(type, school_name) %>% 
+  summarize(avg.reading=mean(reading_score), avg.math=mean(math_score), total.students=sum(student_count), percentage.passing.math=percentage_passing_math, percentage.passing.reading=percentage_passing_reading, percentage.passing.rate=overall_passing_rate)
+# select(diamonds, carat, price)
+# summarize(data2, sum(school_count))
+# summarize(data2, sum(student_count))
+# summarize(data2, sum(total_budget))
+# summarize(data2, mean(mean_reading_score))
+# summarize(data2, mean(mean_math_score))
+# summarize(data2, mean(percentage_passing_reading))
+# summarize(data2, mean(percentage_passing_math))
+# summarize(data2, mean(overall_passing_rate))
 ```
 
 ### Create a per-school summary
 ```{r}
-# YOUR CODE HERE
-```
+# data2 %>% 
+#   group_by(school_name) %>% 
+#   summarize(avg.reading=mean(reading_score), avg.math=mean(math_score), total.students=sum(student_count), percentage.passing.math=percentage_passing_math, percentage.passing.reading=percentage_passing_reading, percentage.passing.rate=overall_passing_rate)
 
+```
+```{r}
+school_name <- data2 %>% 
+  summarize(total.schools=school_count, avg.reading=mean(reading_score), avg.math=mean(math_score), total.students=sum(student_count), percentage.passing.math=percentage_passing_math, percentage.passing.reading=percentage_passing_reading, percentage.passing.rate=overall_passing_rate)
+school_name
+```
