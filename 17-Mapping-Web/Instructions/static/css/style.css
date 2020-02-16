@@ -3,10 +3,8 @@ body {
   margin: 0;
 }
 
-#mapid {
-  height: 180px;
-}
-
+/* set map, body, and html to 100% of the screen size */
+#map,
 body,
 html {
   height: 100%;
